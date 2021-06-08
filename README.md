@@ -1,20 +1,20 @@
-# Unit 14 Mini-Project: Crowdfunding App
+# Unit 14 Mini-blog: Crowdfunding App
 
-In this mini-project, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.
+In this mini-blog, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.
 
 ## User Stories
 
-* As a user, I want to see a list of current projects seeking funding.
+* As a user, I want to see a list of current blogs seeking funding.
 
 * As a user, I want to be able to create an account.
 
-* As a registered user, I want to post my own projects to ask for funding.
+* As a registered user, I want to post my own blogs to ask for funding.
 
 ### Acceptance Criteria
 
-* It's done when the `/` homepage route renders a list of all projects from the database.
+* It's done when the `/` homepage route renders a list of all blogs from the database.
 
-* It's done when the `/project/:id` route renders an individual project's details based on the route parameter id.
+* It's done when the `/blog/:id` route renders an individual blog's details based on the route parameter id.
 
 * It's done when the `/login` route renders a form to log in and a form to create a new account.
 
@@ -22,15 +22,15 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 
 * It's done when a new user can create an account on the login page and then be immediately logged in with a session.
 
-* It's done when the `/profile` route renders the logged-in user's projects and a form to create a new project.
+* It's done when the `/profile` route renders the logged-in user's blogs and a form to create a new blog.
 
 * It's done when only a logged in user can visit the `/profile` route.
 
 * It's done when a logged in user is redirected to `/profile` when they try to visit `/login` again.
 
-* It's done when a user on the profile page can use the form to create a new project in the database.
+* It's done when a user on the profile page can use the form to create a new blog in the database.
 
-* It's done when a user on the profile page can select a "Delete" button to remove their project from the database.
+* It's done when a user on the profile page can select a "Delete" button to remove their blog from the database.
 
 * It's done when a logged-in user can select a "Logout" button to remove their session.
 
@@ -54,7 +54,7 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 
     * `password`
 
-  * `Project`
+  * `blog`
 
     * `id`: primary key
 
@@ -68,9 +68,9 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 
     * `user_id`: foreign key that references `User.id`
 
-  * Users have many projects, and projects belong to a user.
+  * Users have many blogs, and blogs belong to a user.
 
-    * If a user is deleted, all associated projects are also deleted.
+    * If a user is deleted, all associated blogs are also deleted.
 
 ---
 
@@ -88,7 +88,7 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 
 If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
-* Add an `/edit/:id` route for logged in users to update their projects' details. Then deploy the app to Heroku!
+* Add an `/edit/:id` route for logged in users to update their blogs' details. Then deploy the app to Heroku!
 
 ---
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
