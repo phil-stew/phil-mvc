@@ -1,4 +1,4 @@
-<div class="text-center">
+{{!-- <div class="text-center">
   {{#each blogs as |blog| }}
   
   <p>{{blog.reply}}</p>
@@ -8,4 +8,34 @@
     <button class="btn btn-primary">Fund this blog!</button>
   </p>
   {{/each}}
+</div> --}}
+
+
+<h1>Home Page</h1>
+{{#each blogs as |blog|}}
+<div data-blogid ="{{blog.id}}" class="blog-content">
+    <div id="inner-content">
+        <a href="/singleblog/{{blog.id}}"><h2 class="blog-title">{{blog.title}}</h2></a>
+        <p class="blog-main">{{blog.content}}</p>
+        <h3 class="blog-author">By: {{user.username}}</h3>
+        <h6 class="timestamp">{{blog.createdAt}}</h3>
+    </div>
+    <div>
+        <div class="add-comment-section" id="addcommentsection{{blog.id}}">
+            <textarea id="comment-text-{{blog.id}}"></textarea>
+            <br>
+            <button type="submit" id="submit-comment-{{blog.id}}">Submit Comment</button>
+        </div>
+        <hr>
+        <div class="comments-section" id="commentsection{{blog.id}}">
+        </div>
+
+        <button class="viewComments" id="viewComments{{blog.id}}">View Comments</button>
+        <button class="hideComments" id="hideComments{{blog.id}}">Hide Comments</button>
+        {{#if logged_in}}
+        <button class="addComment" id="addComment{{blog.id}}">Add a Comment</button>
+        {{else}}
+        {{/if}}        
+    </div>
 </div>
+{{/each}}

@@ -1,0 +1,81 @@
+{{!-- <div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New blog:</h3>
+
+    <form class="form new-blog-form">
+      {{!-- <div class="form-group">
+        <label for="blog-name">blog name:</label>
+        <input class="form-input" type="text" id="blog-name" name="blog-name" />
+      </div>
+      <div class="form-group">
+        <label for="blog-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="blog-funding" name="blog-funding" />
+      </div> --}}
+      <div class="form-group">
+        <label for="blog-desc">reply:</label>
+        <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{!-- {{#if blogs.length}}
+  <div class="col-md-6 blog-list">
+    <h3>Current blogs:</h3>
+
+    {{#each blogs as |blog|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div> --}}
+{{!-- 
+<script src="./js/profile.js"></script> --}} --}}
+
+
+<h1>User Dashboard</h1>
+<p class="dashboard">Welcome {{username}}! This is your dashboard. Here you will find all of your published posts.</p> 
+<p class="dashboard">If this page is (mostly) empty, then it's because you haven't published any blogs!</p> 
+<p class="dashboard">Well, time to get to work... ;)</p>
+</br>
+<button type="button" class="btn btn-primary" id="addNewBlog">Create New Blog Post</button>
+
+{{#each blogArr as |blog|}}
+<div data-blogid ="{{blog.id}}" class="blog-content">
+    <div id="inner-content">
+        <a href="/singleblog/{{blog.id}}"><h2 class="blog-title">{{blog.title}}</h2></a>
+        <p class="blog-main">{{blog.content}}</p>
+        <h3 class="blog-author">By: {{user.username}}</h3>
+        <h6 class="timestamp">{{blog.createdAt}}</h3>
+    </div>
+    <div>
+        <div class="add-comment-section" id="addcommentsection{{blog.id}}">
+            <textarea id="comment-text-{{blog.id}}"></textarea>
+            <br>
+            <button type="submit" id="submit-comment-{{blog.id}}">Submit Comment</button>
+        </div>
+        <hr>
+        <div class="comments-section" id="commentsection{{blog.id}}">
+        </div>
+        <button class="viewComments" id="viewComments{{blog.id}}">View Comments</button>
+        <button class="hideComments" id="hideComments{{blog.id}}">Hide Comments</button>
+        <button class="addComment" id="addComment{{blog.id}}">Add a Comment</button>
+        <button class="btn btn-danger deleteBlog p0" type="button" id="deleteBlog{{blog.id}}">Delete This Blog</button>
+    </div>
+</div>
+{{/each}}
