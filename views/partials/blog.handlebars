@@ -1,0 +1,24 @@
+<div class="post">
+  <figure style="box-shadow: 0 5px 10px #fcef7a; " class="card code-card">
+    <div>
+      <h3 style="color: #5a86e4; text-align:center;">{{title}}</h3>
+    </div>
+    <br>
+    <div>
+      <p style="text-align:center;">{{content}}</p>
+    </div>
+    <div style="margin-top:5%;">
+      <span>By: {{user.name}}</span>
+    </div>
+    <br>
+    <div style="margin-bottom: 3%;">
+      <h7>{{format_date createdAt}}</h7>
+    </div>
+    <div>
+      <h4>Comment:</h4>
+      <br>
+      <h5>{{>blog comments}}</h5>
+    </div>
+
+  </figure>
+</div>

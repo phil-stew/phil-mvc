@@ -11,19 +11,35 @@ Comment.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      reply: {
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'user',
+          ket: 'id'
+        }
+      },
+      blog_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'blog',
+          key: 'id'
+        }
+    },
+
+    comments_text: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
-      date_created: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW,
+        validate: {
+          len: [1]
+        }
       }
+    },
+
      
       
       
-    },
     {
       sequelize,
       timestamps: false,
